@@ -1,0 +1,95 @@
+[Requirement]
+ID=REQ-001
+Title=Accept Input Voltage
+Description=The system shall accept a floating-point input signal voltage_in representing battery cell voltage.
+Category=Functional
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-002
+Title=Voltage Threshold Comparison
+Description=The system shall compare voltage_in against a lower threshold of 3.0V and an upper threshold of 4.2V.
+Category=Functional
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-003
+Title=Voltage OK Output
+Description=The system shall output a Boolean signal voltage_ok that is true if voltage_in is within the safe range, and false otherwise.
+Category=Functional
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-004
+Title=Update Frequency
+Description=The system shall update voltage_ok at each simulation time step without delay.
+Category=Functional
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-005
+Title=Persistent Out-of-Range Detection
+Description=The system shall log a diagnostic event if voltage_in is outside the safe range for more than 3 consecutive cycles.
+Category=Safety
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-006
+Title=Fault Status Output
+Description=The system shall provide a fault status output voltage_fault when an out-of-range condition persists.
+Category=Safety
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-007
+Title=Input Signal Specification
+Description=The input voltage_in shall be a scalar signal of type double, sampled at 10ms intervals.
+Category=Interface
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-008
+Title=Output Signal Specification
+Description=The output voltage_ok shall be a scalar Boolean signal compatible with downstream fault management modules.
+Category=Interface
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-009
+Title=Fault Reset Behavior
+Description=The system shall reset the fault status voltage_fault if voltage_in returns to the safe range for 5 consecutive cycles.
+Category=Behavioral
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-010
+Title=Deterministic Operation
+Description=The system shall operate deterministically under all input conditions.
+Category=Behavioral
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-011
+Title=Python-Based Verification
+Description=Each requirement shall be verifiable via unit test in Python using simulated voltage inputs.
+Category=Testability
+Status=Draft
+Owner=Mehmet Arslan
+
+[Requirement]
+ID=REQ-012
+Title=Hardware-Free Code Generation
+Description=The model shall support code generation via Embedded Coder without requiring hardware dependencies.
+Category=Testability
+Status=Draft
+Owner=Mehmet Arslan
